@@ -1,0 +1,44 @@
+/*bug.css*/
+.container {
+  position: relative; /* added position relative to resolve z-index conflict */
+  width: 200px;
+  height: 200px;
+  background-color: lightblue;
+}
+
+.element {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 100px;
+  height: 100px;
+  background-color: lightcoral;
+  z-index: 1; /* Ensure element is above other elements */
+}
+
+.element:hover {
+  background-color: lightgreen;
+}
+
+/*bugSolution.css*/
+.container {
+  width: 200px;
+  height: 200px;
+  background-color: lightblue;
+  position: relative; /* added position relative to resolve z-index conflict */
+}
+
+.element {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 100px;
+  height: 100px;
+  background-color: lightcoral;
+  z-index: 1; /* Ensure element is above other elements */
+  pointer-events: auto; /* Ensure that the event is triggered */
+}
+
+.element:hover {
+  background-color: lightgreen;
+}  
